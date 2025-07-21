@@ -15,9 +15,8 @@ app.use(express.json());
 
 //app.use('/pessoas', pessoaRoutes);
 //app.use('/contatos', contatoRoutes);
-app.use(userRoutes);
-app.use("/api", authRoutes);
-app.use('/api', userRoutes);
+app.use("/api/auth", authRoutes);
+app.use('/api/users', userRoutes);
 
 app.use(cors());
 app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));

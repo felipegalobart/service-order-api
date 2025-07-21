@@ -17,6 +17,19 @@ const options: swaggerJsdoc.Options = {
           bearerFormat: "JWT",
         },
       },
+      schemas: {
+        User: {
+          type: "object",
+          properties: {
+            id: { type: "number" },
+            name: { type: "string" },
+            email: { type: "string" },
+            role: { type: "string", enum: ["admin", "student", "teacher"] },
+            createdAt: { type: "string", format: "date-time" },
+            updatedAt: { type: "string", format: "date-time" },
+          },
+        },
+      },
     },
     security: [{ bearerAuth: [] }],
   },
