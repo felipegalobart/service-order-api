@@ -130,3 +130,6 @@ dist
 .pnp.*
 
 /src/generated/prisma
+.DS_Store
+
+*.postman_collection.json
