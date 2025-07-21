@@ -1,3 +1,16 @@
+/**
+ * @swagger
+ * /users:
+ *   get:
+ *     summary: Lista todos os usuários
+ *     tags: [Users]
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Lista de usuários retornada com sucesso
+ */
+
 import { Router } from 'express';
 import {
   createUser,

@@ -4,6 +4,7 @@ import contatoRoutes from './routes/contatoRoutes';
 import userRoutes from './routes/userRoutes';
 import cors from 'cors';
 import authRoutes from "./routes/authRoutes";
+import { swaggerUi, swaggerSpec } from "./docs/swagger";
 
 
 
@@ -19,5 +20,6 @@ app.use("/api", authRoutes);
 app.use('/api', userRoutes);
 
 app.use(cors());
+app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 export default app;
