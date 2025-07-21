@@ -1,38 +1,75 @@
-# Base limpa de API em Node
 
-Este repositório serve exclusivamente para oferecer uma base rápida para criação de APIs em Node.
 
-Ele possui apenas a configuração básica do Express com Typescript e o primeiro router.
+# Service Order API
 
-## Instalação
-Você pode clonar o repositório e rodar:
-```bash
-npm install
+This is a backend API for managing service orders, built with **Node.js**, **Express**, **TypeScript**, and **Prisma ORM**.  
+It provides a modular architecture, starting with full user management (CRUD), and will expand to include other business modules like clients, service orders, authentication, and more.
+
+---
+
+## 🚀 Technologies Used
+
+- [Node.js](https://nodejs.org/)
+- [Express](https://expressjs.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Prisma](https://www.prisma.io/)
+- [PostgreSQL](https://www.postgresql.org/) (recommended DB)
+- [bcryptjs](https://github.com/dcodeIO/bcrypt.js) – password hashing
+- [dotenv](https://github.com/motdotla/dotenv) – env var management
+- [Helmet](https://helmetjs.github.io/) – HTTP security headers
+- [CORS](https://github.com/expressjs/cors) – Cross-origin requests
+- [Swagger UI Express](https://www.npmjs.com/package/swagger-ui-express) – API documentation
+
+---
+
+## 📁 Project Structure
+
+```
+service-order-api/
+├── src/
+│   ├── controllers/       # Request handling
+│   ├── routes/            # Route definitions
+│   ├── services/          # Business logic
+│   ├── libs/              # Shared utilities (e.g., Prisma client)
+│   └── server.ts          # Entry point
+├── prisma/
+│   └── schema.prisma      # Prisma schema and DB models
+├── package.json
+└── .env                   # Environment variables
 ```
 
-Depois clonar o arquivo `.env.example` para `.env.local`:
-```bash
-cp .env.example .env.local
-```
-E alterar as variáveis de ambiente.
+---
 
-## Uso
-Para rodar o projeto, utilize o comando padrão:
+## 🛠️ Scripts
+
 ```bash
+# Run the API in development mode
 npm run dev
 ```
 
-## Adicionais
-Caso queira, é interessante remover o `origin` do repositório, para adicionar seu próprio repositório remoto e continuar o desenvolvimento.
+---
 
-Para ver os repositórios remotos:
-```bash
-git remote -v
-```
+## ✅ Features
 
-Para trocar o origin:
-```bash
-git remote remove origin
-git remote add origin <url>
-```
-Sendo `<url>` o diretório do seu repositório remoto.
+- [x] User CRUD (Create, Read, Update, Delete)
+- [x] Secure password hashing
+- [x] Modular folder structure
+- [x] Prisma integration with PostgreSQL
+- [x] Environment variable support
+- [x] Swagger documentation setup (WIP)
+
+---
+
+## 🔒 Upcoming Features
+
+- [ ] User authentication with JWT
+- [ ] Route protection middleware
+- [ ] Input validation (Zod)
+- [ ] Clients and service orders module
+- [ ] Full Swagger API docs
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
