@@ -50,7 +50,7 @@ export const updateUser = async (req: Request, res: Response) => {
 export const deleteUser = async (req: Request, res: Response) => {
   try {
     await UserService.deleteUser(parseInt(req.params.id));
-    res.json({ message: 'Usuário deletado com sucesso' });
+    return res.sendStatus(204);
   } catch (error) {
     res.status(400).json({ error: 'Erro ao deletar usuário' });
   }

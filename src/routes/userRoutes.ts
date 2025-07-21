@@ -13,8 +13,8 @@ import { authenticate } from '../middlewares/authMiddleware';
 
 router.post('/users', authenticate, createUser);
 router.get('/users', authenticate, getUsers);
-router.get('/users/:id', getUserById);
-router.put('/users/:id', updateUser);
-router.delete('/users/:id', deleteUser);
+router.get('/users/:id', authenticate, getUserById);
+router.put('/users/:id', authenticate, updateUser);
+router.delete('/users/:id', authenticate, deleteUser);
 
 export default router;
