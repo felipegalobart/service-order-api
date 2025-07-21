@@ -12,7 +12,7 @@ const router = Router();
 import { authenticate } from '../middlewares/authMiddleware';
 
 router.post('/users', authenticate, createUser);
-router.get('/users', getUsers);
+router.get('/users', authenticate, getUsers);
 router.get('/users/:id', getUserById);
 router.put('/users/:id', updateUser);
 router.delete('/users/:id', deleteUser);
