@@ -43,8 +43,8 @@ model ContatoPessoa {
   whatsapp   Boolean
   email      String?
   observacao String?
-  Pessoa     Pessoa? @relation(fields: [pessoaId], references: [id])
-  pessoaId   Int?
+  Pessoa     Pessoa  @relation(fields: [pessoaId], references: [id])
+  pessoaId   Int
 }
 
 model Pessoa {
