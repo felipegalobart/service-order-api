@@ -11,8 +11,8 @@ const app = express();
 
 app.use(express.json());
 
-app.use('/pessoas', pessoaRoutes);
-app.use('/contatos', contatoRoutes);
+//app.use('/pessoas', pessoaRoutes);
+//app.use('/contatos', contatoRoutes);
 app.use(userRoutes);
 app.use("/api", authRoutes);
 
