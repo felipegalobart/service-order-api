@@ -10,7 +10,10 @@ import { swaggerUi, swaggerSpec } from "./docs/swagger";
 
 const app = express();
 
-
+app.use(cors({
+  origin: "*", // ou "*"
+  
+}));
 app.use(express.json());
 
 //app.use('/pessoas', pessoaRoutes);
@@ -18,7 +21,8 @@ app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use('/api/users', userRoutes);
 
-app.use(cors());
+
+
 app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 export default app;
