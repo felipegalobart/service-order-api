@@ -9,7 +9,9 @@ import {
 
 const router = Router();
 
-router.post('/users', createUser);
+import { authenticate } from '../middlewares/authMiddleware';
+
+router.post('/users', authenticate, createUser);
 router.get('/users', getUsers);
 router.get('/users/:id', getUserById);
 router.put('/users/:id', updateUser);

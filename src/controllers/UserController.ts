@@ -1,9 +1,14 @@
 import { Request, Response } from 'express';
 import { UserService } from '../services/UserService';
+import { createUserSchema, updateUserSchema } from '../validations/userSchema';
 
 export const createUser = async (req: Request, res: Response) => {
   try {
-    const user = await UserService.createUser(req.body);
+    const parsed = createUserSchema.safeParse(req.body);
+    if (!parsed.success) {
+      return res.status(400).json({ error: 'Validation error', issues: parsed.error.format() });
+    }
+    const user = await UserService.createUser(parsed.data);
     res.status(201).json(user);
   } catch (error) {
     res.status(400).json({ error: 'Erro ao criar usuário', details: error });
@@ -31,7 +36,11 @@ export const getUserById = async (req: Request, res: Response) => {
 
 export const updateUser = async (req: Request, res: Response) => {
   try {
-    const user = await UserService.updateUser(parseInt(req.params.id), req.body);
+    const parsed = updateUserSchema.safeParse(req.body);
+    if (!parsed.success) {
+      return res.status(400).json({ error: 'Validation error', issues: parsed.error.format() });
+    }
+    const user = await UserService.updateUser(parseInt(req.params.id), parsed.data);
     res.json(user);
   } catch (error) {
     res.status(400).json({ error: 'Erro ao atualizar usuário' });
