@@ -1,4 +1,3 @@
-
 /**
  * @swagger
  * tags:
@@ -32,7 +31,7 @@
 
 /**
  * @swagger
- * /users:
+ * /api/users:
  *   get:
  *     summary: Lista todos os usuários
  *     tags: [Users]
@@ -64,7 +63,7 @@ import { authenticate } from '../middlewares/authMiddleware';
 
 /**
  * @swagger
- * /users/{id}:
+ * /api/users/{id}:
  *   get:
  *     summary: Busca um usuário por ID
  *     tags: [Users]
@@ -89,7 +88,7 @@ router.get('/', authenticate, getUsers);
 
 /**
  * @swagger
- * /users:
+ * /api/users:
  *   post:
  *     summary: Cria um novo usuário
  *     tags: [Users]
@@ -125,7 +124,7 @@ router.get('/:id', authenticate, getUserById);
 
 /**
  * @swagger
- * /users/{id}:
+ * /api/users/{id}:
  *   put:
  *     summary: Atualiza um usuário
  *     tags: [Users]
@@ -161,7 +160,7 @@ router.put('/:id', authenticate, updateUser);
 
 /**
  * @swagger
- * /users/{id}:
+ * /api/users/{id}:
  *   delete:
  *     summary: Deleta um usuário
  *     tags: [Users]

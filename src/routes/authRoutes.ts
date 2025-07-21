@@ -4,7 +4,7 @@ import { login } from "../controllers/AuthController";
 const router = Router();
 /**
  * @swagger
- * /auth/login:
+ * /api/auth/login:
  *   post:
  *     summary: Realiza o login do usuário
  *     tags: [Auth]
